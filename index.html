@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda Nemesis — E-commerce</title>
+
+  <!-- Google Font (opcional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Tienda Nemesis</a>
+
+      <nav id="nav" class="nav" aria-label="Navegación principal">
+        <a href="#hero">Inicio</a>
+        <a href="#about">About</a>
+        <a href="#products">Productos</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="cart-toggle" class="btn cart-btn" aria-expanded="false" aria-controls="cart" aria-label="Abrir carrito">
+          🛒 <span id="cart-count" aria-live="polite">0</span>
+        </button>
+        <button id="menu-toggle" class="btn menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1>Encuentra productos increíbles</h1>
+          <p>Seleccionamos artículos de calidad y te los mostramos con una experiencia simple y rápida.</p>
+          <a href="#products" class="btn primary">Ver productos</a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="https://picsum.photos/800/520?random=11" alt="Imagen destacada" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about container" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre nosotros</h2>
+      <p>Tienda Nemesis es un espacio dedicado a ofrecer productos de calidad con una experiencia de compra sencilla y rápida.</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="products container" aria-labelledby="products-title">
+      <div class="products-header">
+        <h2 id="products-title">Productos</h2>
+        <div class="controls" role="region" aria-label="Controles de productos">
+          <select id="category-filter" aria-label="Filtrar por categoría">
+            <option value="all">Todas las categorías</option>
+          </select>
+
+          <input id="search" type="search" placeholder="Buscar producto..." aria-label="Buscar producto" />
+        </div>
+      </div>
+
+      <!-- feedback / loading -->
+      <div id="products-feedback" class="feedback" aria-live="polite"></div>
+
+      <!-- product list -->
+      <div id="product-list" class="product-grid" role="list">
+        <!-- Renderizado desde JS -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contacto</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" required minlength="2" />
+          <small class="error" data-for="name" aria-live="assertive"></small>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" required type="email" />
+          <small class="error" data-for="email" aria-live="assertive"></small>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" required minlength="10"></textarea>
+          <small class="error" data-for="message" aria-live="assertive"></small>
+        </div>
+
+        <div class="form-row">
+          <button type="submit" class="btn primary">Enviar</button>
+          <div id="contact-success" class="success hidden" role="status">¡Mensaje enviado con éxito!</div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer container" role="contentinfo">
+    <p>&copy;<span id="year"></span> Todos los derechos reservados, Tienda Nemesis</p>
+  </footer>
+
+  <!-- CART PANEL (slide-in) -->
+  <aside id="cart" class="cart-panel hidden" aria-hidden="true" aria-labelledby="cart-title" role="dialog">
+    <div class="cart-header">
+      <h3 id="cart-title">Tu carrito</h3>
+      <button id="cart-close" class="btn" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div id="cart-items" class="cart-items" role="list">
+      <!-- Items renderizados aquí -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+      <div style="display:flex;gap:.5rem">
+        <button id="checkout-btn" class="btn primary">Finalizar</button>
+        <button id="clear-cart-btn" class="btn">Vaciar</button>
+      </div>
+    </div>
+  </aside>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

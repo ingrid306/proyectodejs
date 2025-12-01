@@ -1,0 +1,382 @@
+/* =========================================================
+   GLOBAL STYLES (MOBILE FIRST)
+========================================================= */
+:root {
+  /* Layout */
+  --max-width: 1100px;
+  --gap: 1rem;
+
+  /* Colors */
+  --accent: #410957;
+  --bg: #99e3e6;
+  --text: #111;
+  --muted: #1a0202;
+  --border: #500b0b;
+
+  /* UI */
+  --card-bg: #e7f1ed;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(17, 17, 17, 0.08);
+
+  /* Typography */
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+
+  color-scheme: light;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav {
+  display: none;
+  gap: 1.2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.nav a:hover {
+  background: #f1f4ff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+#cart-count {
+  background: #111;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-left: 0.35rem;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+  padding: 2.5rem 0;
+  background: linear-gradient(180deg, #f9fbff, transparent);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+.about {
+  padding: 2.5rem 0;
+}
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+.products {
+  padding: 2.5rem 0;
+}
+
+.products-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.controls select,
+.controls input {
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.product-card {
+  background: var(--card-bg);
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+}
+
+.product-card img {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-title {
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+
+.product-price {
+  font-weight: 700;
+  margin: 0.25rem 0;
+}
+
+.btn-sm {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+.contact {
+  padding: 2.5rem 0;
+}
+
+/* Contenedor de cada fila */
+.form-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label */
+.form-row label {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs y textarea */
+.form-row input,
+.form-row textarea {
+  padding: 0.75rem;
+  border: 1px solid #d4d4d4; /* reemplazo de var(--border) */
+  border-radius: 10px;
+  background: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+/* Hover y focus */
+.form-row input:hover,
+.form-row textarea:hover {
+  border-color: #999;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(43, 124, 255, 0.15);
+  outline: none;
+}
+
+/* Mensaje de error */
+.form-row small.error {
+  color: #b00020;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  height: 1rem; /* mantiene espacio aunque no haya error */
+}
+
+/* Campo con error */
+.form-row input.error,
+.form-row textarea.error {
+  border-color: #b00020;
+  background: #ffe8eb;
+}
+
+/* Mensaje de éxito */
+.success {
+  color: green;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: center;
+}
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* =========================================================
+   CART PANEL
+========================================================= */
+.cart-panel {
+  position: fixed;
+  right: 1rem;
+  top: 6rem;
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  z-index: 40;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.cart-items {
+  max-height: 50vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cart-item img {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.cart-footer {
+  border-top: 1px solid #eee;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+.hidden {
+  display: none;
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+========================================================= */
+@media (min-width: 720px) {
+  .nav {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr 480px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
